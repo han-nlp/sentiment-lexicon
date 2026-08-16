@@ -1,4 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="-apple-system, 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans CJK SC', 'PingFang SC', 'Microsoft YaHei', sans-serif">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" style="stop-color:#f0f4ff"/>
@@ -28,84 +29,68 @@
       <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
     </marker>
     <filter id="shadow" x="-5%" y="-5%" width="110%" height="115%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000" flood-opacity="0.1"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.1"/>
     </filter>
   </defs>
 
-  <!-- Background -->
   <rect width="900" height="520" fill="url(#bg)" rx="12"/>
 
-  <!-- Title -->
   <text x="450" y="40" text-anchor="middle" font-size="20" font-weight="700" fill="#1e293b">情感分析标注系统 · 项目架构</text>
   <text x="450" y="62" text-anchor="middle" font-size="12" fill="#64748b">Sentiment Annotation Pipeline — From Lexicon to RLHF</text>
 
-  <!-- Layer labels -->
   <text x="30" y="120" font-size="11" font-weight="600" fill="#94a3b8" transform="rotate(-90, 30, 120)">INPUT</text>
   <text x="30" y="260" font-size="11" font-weight="600" fill="#94a3b8" transform="rotate(-90, 30, 260)">PROCESS</text>
   <text x="30" y="420" font-size="11" font-weight="600" fill="#94a3b8" transform="rotate(-90, 30, 420)">OUTPUT</text>
 
-  <!-- Box 1: Data Input -->
   <rect x="80" y="90" width="180" height="70" rx="10" fill="url(#box1)" filter="url(#shadow)"/>
-  <text x="170" y="120" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">原始文本数据</text>
+  <text x="170" y="120" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="600">原始文本数据</text>
   <text x="170" y="140" text-anchor="middle" fill="#dbeafe" font-size="11">评论 · 社交媒体 · 网络文本</text>
   <text x="170" y="155" text-anchor="middle" fill="#bfdbfe" font-size="10">pandas 读取 · 清洗 · 去重</text>
 
-  <!-- Arrow 1→2 -->
   <line x1="260" y1="125" x2="320" y2="125" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- Box 2: Preprocessing -->
   <rect x="320" y="90" width="180" height="70" rx="10" fill="url(#box2)" filter="url(#shadow)"/>
-  <text x="410" y="120" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">预处理 &amp; 分词</text>
+  <text x="410" y="120" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="600">预处理与分词</text>
   <text x="410" y="140" text-anchor="middle" fill="#ede9fe" font-size="11">jieba 分词 · 否定词检测</text>
   <text x="410" y="155" text-anchor="middle" fill="#ddd6fe" font-size="10">程度副词 · 句式分析</text>
 
-  <!-- Arrow 2→3 -->
   <line x1="500" y1="125" x2="560" y2="125" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- Box 3: Annotation Rules -->
   <rect x="560" y="75" width="260" height="100" rx="10" fill="url(#box3)" filter="url(#shadow)"/>
-  <text x="690" y="105" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">三维标注规则引擎</text>
+  <text x="690" y="105" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="600">三维标注规则引擎</text>
   <text x="690" y="128" text-anchor="middle" fill="#cffafe" font-size="11">维度1: 情感极性 (正/负/中)</text>
   <text x="690" y="146" text-anchor="middle" fill="#cffafe" font-size="11">维度2: 强度等级 (1-5)</text>
   <text x="690" y="164" text-anchor="middle" fill="#a5f3fc" font-size="11">维度3: 歧义标记 (反讽/双关/多义)</text>
 
-  <!-- Vertical arrow down -->
   <line x1="690" y1="175" x2="690" y2="230" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- Box 4: Quality Iteration -->
   <rect x="560" y="230" width="260" height="110" rx="10" fill="url(#box4)" filter="url(#shadow)"/>
-  <text x="690" y="260" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">质量评估与迭代闭环</text>
+  <text x="690" y="260" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="600">质量评估与迭代闭环</text>
   <text x="690" y="283" text-anchor="middle" fill="#d1fae5" font-size="11">错误案例归因 (4大类)</text>
   <text x="690" y="301" text-anchor="middle" fill="#d1fae5" font-size="11">词典遗漏 · 歧义词 · 长句误判 · 反讽</text>
   <text x="690" y="322" text-anchor="middle" fill="#a7f3d0" font-size="12" font-weight="600">65.3% → 94% (+28.7pp)</text>
 
-  <!-- Feedback loop arrow -->
   <path d="M 560 285 Q 510 285 510 125 Q 510 90 560 90" fill="none" stroke="#10b981" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow)"/>
   <text x="495" y="210" text-anchor="middle" fill="#047857" font-size="10" font-weight="600" transform="rotate(-90, 495, 210)">规则迭代反馈</text>
 
-  <!-- Arrow down to output -->
   <line x1="690" y1="340" x2="690" y2="400" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- Box 5: Output -->
   <rect x="520" y="400" width="340" height="80" rx="10" fill="url(#box5)" filter="url(#shadow)"/>
-  <text x="690" y="430" text-anchor="middle" fill="#fff" font-size="14" font-weight="600">标注数据产出</text>
+  <text x="690" y="430" text-anchor="middle" fill="#ffffff" font-size="14" font-weight="600">标注数据产出</text>
   <text x="690" y="452" text-anchor="middle" fill="#fef3c7" font-size="11">标注规范文档 · CoT示例集 · 偏好标注对 · 质量评估报告</text>
   <text x="690" y="470" text-anchor="middle" fill="#fde68a" font-size="10">可直接用于 SFT / RLHF 奖励模型训练</text>
 
-  <!-- Left side: tech stack -->
-  <rect x="80" y="230" width="180" height="110" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="80" y="230" width="180" height="110" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
   <text x="170" y="258" text-anchor="middle" fill="#1e293b" font-size="13" font-weight="600">技术栈</text>
-  <text x="100" y="282" fill="#475569" font-size="11">🐍 Python · pandas</text>
-  <text x="100" y="302" fill="#475569" font-size="11">🗄️ SQL 多表联查 · 子查询</text>
-  <text x="100" y="322" fill="#475569" font-size="11">📊 一致性校验 · 准确率评估</text>
+  <text x="100" y="282" fill="#475569" font-size="11">[Python] pandas 数据处理</text>
+  <text x="100" y="302" fill="#475569" font-size="11">[SQL] 多表联查 · 子查询</text>
+  <text x="100" y="322" fill="#475569" font-size="11">[Eval] 一致性校验 · 准确率评估</text>
 
-  <!-- Left side: extension -->
-  <rect x="80" y="370" width="380" height="110" rx="10" fill="#fff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
+  <rect x="80" y="370" width="380" height="110" rx="10" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" filter="url(#shadow)"/>
   <text x="270" y="398" text-anchor="middle" fill="#1e293b" font-size="13" font-weight="600">扩展：RLHF 偏好标注能力</text>
-  <text x="100" y="422" fill="#475569" font-size="11">✓ 4维度偏好排序规范 (准确性·帮助性·安全性·表达)</text>
-  <text x="100" y="442" fill="#475569" font-size="11">✓ 15对偏好标注示例 · 含评分与决策理由</text>
-  <text x="100" y="462" fill="#475569" font-size="11">✓ 5个红队测试场景 · 覆盖诱导/歧义/越狱/偏见/多轮攻击</text>
+  <text x="100" y="422" fill="#475569" font-size="11">[OK] 4维度偏好排序规范 (准确性·帮助性·安全性·表达)</text>
+  <text x="100" y="442" fill="#475569" font-size="11">[OK] 15对偏好标注示例 · 含评分与决策理由</text>
+  <text x="100" y="462" fill="#475569" font-size="11">[OK] 5个红队测试场景 · 覆盖诱导/歧义/越狱/偏见/多轮攻击</text>
 
-  <!-- Connect stack to process -->
   <line x1="260" y1="285" x2="560" y2="285" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="4,3"/>
 </svg>

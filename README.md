@@ -1,3 +1,4 @@
+
 # 从情感词典到 RLHF：大模型数据标注项目
 
 > 汉语言文学背景 × 数据标注实践 | 标注规则设计 · 质量迭代 · CoT 思维链 · 偏好排序 · 红队测试
@@ -44,11 +45,16 @@
 │   └── error_analysis.csv              # 17条错误案例归因
 ├── src/
 │   ├── preprocess.py                   # pandas 数据清洗/去重/一致性校验
-│   ├── annotate.py                     # 三维规则标注引擎
-│   ├── evaluate.py                     # 准确率评估与错误分析
-│   └── utils_sql/                      # SQL 多表联查脚本
+│   ├── annotate.py                     # 三维规则标注引擎（极性/强度/歧义+置信度）
+│   ├── evaluate.py                     # 准确率评估与错误分析（V1/V2/V3版本记录）
+│   └── utils_sql/
+│       └── iaa_consistency_check.sql   # SQL 多表联查 + Cohen's Kappa 一致性校验
+├── legacy/
+│   └── v1_dict_baseline/               # V1 基线历史版本（展示 65.3%→94% 迭代起点）
 └── requirements.txt
 ```
+
+> `legacy/v1_dict_baseline/` 保留了第一版"一词一极性"的粗糙词典与脚本（已修复路径、去除重复 key），可运行复现 V1 在反讽/多义/否定上的典型误判，用于对照迭代过程。
 
 ***
 
@@ -201,4 +207,3 @@ Step 4: 给出最终判定 + 置信度(0-100%)
 - 技术能力：Python (pandas) · SQL · 数据清洗 · 质量评估
 
 - 方向兴趣：RLHF 偏好对齐 · 中文 NLP · 红队测试
-
